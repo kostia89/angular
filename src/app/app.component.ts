@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { bayList } from './list.model';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bay list';
- 
-  list = [{
+  
+   list: bayList[] = [{
     name: 'хліб',
     value: 1,
     done: true
@@ -29,4 +30,5 @@ export class AppComponent {
   checkList(){
     alert('ok')
   }
+  
 }
