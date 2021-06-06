@@ -1,0 +1,8 @@
+<button [disabled]="isUnchanged"(click)="change()">list</button>
+<button [disabled]="isGrid"(click)="changeGrid()">grid</button>
+<div [ngClass]="{'list': isUnchanged, 'grid': isGrid}">
+<ul *ngFor= 'let item of Homelist'>
+    <li>{{item.name}}</li>
+    <li>{{item.value}}</li>
+</ul>
+</div>

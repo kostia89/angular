@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { list } from './list.model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Bay list';
  
-  list = [{
+  list: list[] = [{
     name: 'хліб',
     value: 1,
     done: true
