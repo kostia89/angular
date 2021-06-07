@@ -1,18 +1,22 @@
 ul{
     list-style: none;
-    border: 2px solid;
-    color: blue;
 }
 .list{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
+    ul{
+        border: 2px solid;
+        color: blue;
+    }
 }
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 15px;
-
+    ul{
+        border: 2px solid;
+        color: blue;
+    }
 }
