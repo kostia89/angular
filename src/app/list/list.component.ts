@@ -20,6 +20,7 @@ export class ListComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
+  
   ngOnInit(): void {
     this.formAdd = this.fb.group({
       name:[''],
