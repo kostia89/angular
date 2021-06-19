@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     SortPipe,
     SearchPipe,
+    
   ],
   imports: [
     BrowserModule,
