@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { SortPipe } from './sort.pipe';
 import { SearchPipe } from './search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TotalPricePipe } from './total-price.pipe';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     SortPipe,
     SearchPipe,
+    TotalPricePipe,
     
   ],
   imports: [

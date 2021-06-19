@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   text: string = "";
   sort: boolean= true;
   formAdd: FormGroup;
- 
+  total: number;
   produkts: produkt[] = [];
   produkt: any;
  
@@ -25,20 +25,27 @@ export class ListComponent implements OnInit {
       name:[''],
       price: ['']
     })
-    
+    this.calcTotal();
   }
   sortPrise(){
     this.sort= !this.sort
-    
+    this.calcTotal()
   }
   addProduct(){
     this.produkts.push({
       ...this.formAdd.value
     })
+    this.calcTotal()
   }
   remove( index:  number){
     this.produkts.splice(index, 1)
-    
+    this.calcTotal()
   }
-  
+  calcTotal() {
+    let tempTotal = 0;
+    this.produkts.forEach(item => {
+      tempTotal += +item.price;
+    });
+    this.total = tempTotal;
+  }
 }
