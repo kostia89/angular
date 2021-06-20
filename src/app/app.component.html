@@ -1,6 +1,8 @@
+<div class="box">
 <div>
-    <input type="button" value="Login" (click)="onLoginForm()">
-    <input type="button" value="Register">
+    <input type="button" value="Login"  (click)="onLoginForm()"[disabled]="onLogin">
+    <input type="button" value="Register" (click)="onRegisterForm()" [disabled]="onRegistr">
 </div>
-<app-log-form></app-log-form>
-<app-reg-form></app-reg-form>
+<app-log-form *ngIf="onLogin"></app-log-form>
+<app-reg-form *ngIf="onRegistr"></app-reg-form>
+</div>
