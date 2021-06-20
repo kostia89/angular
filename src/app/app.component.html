@@ -1,52 +1,6 @@
 <div>
-    <input type="button" value="Login">
+    <input type="button" value="Login" (click)="onLoginForm()">
     <input type="button" value="Register">
 </div>
-<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-    <div >
-        <div>
-            <input type="text"placeholder="Username or email" [(ngModel)]="user.Username" name="Username" required>
-        </div>
-    </div>
-    <div>
-        <div>
-            <input type="password" placeholder="Password" [(ngModel)]="user.Password" name="Password" required>
-        </div>
-    </div>
-    <div>
-        <input type="checkbox" id="rememberMe">
-        <label for="rememberMe">Remember Me</label>
-        <a href="#" >Forgot password?</a>
-    </div>  
-    <input type="submit" value="Login" [disabled]="">
-
-</form>
-
-<form >
-    <div>
-        <div>
-            <input type="text" placeholder="Username">
-        </div>
-    </div>
-    <div >
-        <div >
-            <input type="text" placeholder="Full name">
-        </div>
-    </div>
-    <div>
-        <div>
-            <input type="email" placeholder="Email">
-        </div>
-    </div>
-    <div>
-        <div>
-            <input type="password" placeholder="Password">
-        </div>
-    </div>
-    <div>
-        <div>
-            <input type="password" placeholder="Confirm Password">
-        </div>
-    </div>
-    <input type="submit" value="Register">
-</form>
+<app-log-form></app-log-form>
+<app-reg-form></app-reg-form>

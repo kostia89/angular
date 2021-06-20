@@ -1,0 +1,25 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <div >
+        <div>
+            <input type="text"placeholder="Username or email" [(ngModel)]="user.Username" name="Username" #loginName="ngModel" required>
+            <div *ngIf="!loginName.valid && loginName.dirty">
+                !!!!
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <input type="password" placeholder="Password" [(ngModel)]="user.Password" name="Password" #loginPassword="ngModel" required>
+            <div *ngIf="loginPassword.invalid && loginPassword.touched">
+                !!!!
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+        <a href="#" >Forgot password?</a>
+    </div>  
+    <input type="submit" value="Login" [disabled]="!loginForm.form.valid" >
+    {{loginForm.form.valid | json}}
+</form>
