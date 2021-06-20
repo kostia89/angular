@@ -38,8 +38,9 @@ export class ListComponent implements OnInit {
     })
     this.calcTotal()
   }
-  remove( index:  number){
-    this.produkts.splice(index, 1)
+  remove( produkt:  any){
+    const removeIndex = this.produkts.findIndex((item:any)=> item.name === produkt.name)
+    this.produkts.splice(removeIndex, 1)
     this.calcTotal()
   }
   calcTotal() {
