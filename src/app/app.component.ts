@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+  user = {
+    Username: '',
+    Password: ''
+  }
+
+  onSubmit(){
+    console.log(this.user);
+    
+  }
 }
