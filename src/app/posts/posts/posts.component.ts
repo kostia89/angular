@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { observable } from 'rxjs';
 import { Post } from 'src/app/post.model';
 import { PostServService } from '../post-serv.service';
 
@@ -20,8 +21,7 @@ export class PostsComponent implements OnInit {
       console.log(posts);
       this.post = posts;
       this.posts = posts;
-    } )
-    
+    })
   }
 
 }
