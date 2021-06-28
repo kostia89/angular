@@ -1,0 +1,10 @@
+a{
+    display: inline-block;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 20px;
+    &.select{
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
