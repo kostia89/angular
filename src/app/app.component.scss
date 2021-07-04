@@ -1,0 +1,12 @@
+.myForm{
+    margin: 100px 100px;
+    border: palegreen solid 1px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+        padding-bottom: 20px;
+
+    }
+}

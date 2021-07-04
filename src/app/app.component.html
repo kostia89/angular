@@ -1,0 +1,28 @@
+
+<form [formGroup]="myForm" (ngSubmit)="formOk()" class="myForm">
+    <div>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+                <mat-error *ngIf="myForm.controls['name'].hasError('required')">
+                    Name is <strong>required</strong>
+                </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-radio-group aria-label="Select an option" formControlName="option">
+            <mat-radio-button  value="1" >Male</mat-radio-button>
+            <mat-radio-button value="2" >Famile</mat-radio-button>
+          </mat-radio-group>
+    </div>
+      <div>
+        <mat-form-field>
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput formControlName="coment"></textarea>
+            <mat-error *ngIf="myForm.controls['coment'].hasError('minlength')">
+                Coment is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+      </div>
+    <button mat-flat-button color="primary" >Primary</button>
+</form>
