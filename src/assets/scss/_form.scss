@@ -1,0 +1,37 @@
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before{
+    background-color: rgb(99, 30, 190);
+}
+.mat-form-field-label {
+    color: rgb(99, 30, 190);
+}
+.mat-form-field.mat-form-field-appearance-fill:not(.mat-form-field-disabled) .mat-form-field-flex:hover~.mat-form-field-underline .mat-form-field-ripple{
+    opacity: 0;
+}
+.mat-button, .mat-icon-button, .mat-stroked-button {
+    color: rgb(99, 30, 190);
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #522bdf;
+}
+.mat-radio-outer-circle {
+    border-color: #522bdf;
+}
+.mat-radio-outer-circle {
+    border-color: #522bdf;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #522bdf;
+}
+.mat-checkbox-frame {
+    border-color: #522bdf;
+}
+.mat-checkbox-checkmark-path {
+    stroke: #ffffff !important;
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #522bdf;
+}
+.mat-checkbox{
+    margin-top: 15px;
+}
