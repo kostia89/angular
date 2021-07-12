@@ -1,0 +1,11 @@
+@mixin colorPriority {
+    &.low{
+        background-color: rgba(73, 161, 73, 0.808);
+    }
+    &.middle{
+        background-color: rgba(25, 182, 25, 0.733);
+    }
+    &.high{
+        background-color: rgba(21, 194, 21, 0.829);
+    }
+}

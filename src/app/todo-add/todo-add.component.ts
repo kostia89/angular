@@ -13,6 +13,7 @@ import { DataService } from '../shared/services/data.service';
 export class TodoAddComponent implements OnInit {
   addTodoForm: FormGroup;
   minDay = new Date();
+  
   prioritis = [{
     name: 'low',
     id: 1
@@ -48,7 +49,7 @@ export class TodoAddComponent implements OnInit {
   }
   addNewTodo(){
     console.log(this.addTodoForm.value);
-    this.dataServise.addNewTodo(this.addTodoForm.value).subscribe((data)=> {
+    this.dataServise.addNewTodo({...this.addTodoForm.value, createdAt: new Date()}).subscribe((data)=> {
       console.log(data);
       const dialogRef = this.dialog.open(DialogComponent, {
         data: {

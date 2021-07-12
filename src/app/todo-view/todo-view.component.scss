@@ -1,0 +1,12 @@
+@import '../../assets/scss/mixsins';
+.priority {
+    display: flex;
+    align-items: center;
+}
+.priority-indicator {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 25px;
+    @include colorPriority;
+}

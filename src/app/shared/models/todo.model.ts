@@ -5,5 +5,15 @@ export interface Todo {
     dateComplete: Date;
     status: boolean;
     priority: number;
-    id:number;
+    
+}
+
+export interface SaveTodo extends Todo {
+    id: number
+}
+
+export enum Priority{
+    Low = 1,
+    Middle = 2,
+    High = 3
 }
