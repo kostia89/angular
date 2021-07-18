@@ -5,6 +5,7 @@ import { SaveTodo } from '../shared/models/todo.model';
 import { DataService } from '../shared/services/data.service';
 import { filter, switchMap } from 'rxjs/operators'
 import { Observable, of } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -38,9 +39,12 @@ export class TodoListComponent implements OnInit {
     direction: 'DESC',
     name: 'later'
   }]
+  searchForm: FormGroup;
+  textSearch = '';
   constructor(
     private data: DataService,
     private dialog: MatDialog,
+    private fb: FormBuilder
   ) { 
     const savedView= localStorage.getItem('view')
     if (savedView) {
@@ -52,7 +56,19 @@ export class TodoListComponent implements OnInit {
     this.data.getAllTodoList().subscribe((todos) => {
       this.todos = todos;
     })
+    this.searchForm = this.fb.group({
+      name: ['']
+      
+    });
+    this.searchForm.controls['name'].valueChanges.subscribe((name)=>{
+      console.log(name);
+      this.textSearch = name;
+    })
   }
+  clearSearch(){
+    this.searchForm.controls['name'].setValue('');
+  }
+
   changeView(view: string){
     this.defaultView = view;
     localStorage.setItem('view', view)
@@ -86,4 +102,5 @@ export class TodoListComponent implements OnInit {
   changeSortDate(property: string, direction: string){
     this.paramSortDefault = {property, direction}
   }
+  
 }

@@ -10,6 +10,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModule } from '../shared/components/dialog/dialog.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { SortModule } from '../shared/pipes/sort/sort.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { SearchModule } from '../shared/pipes/search/search.module';
 
 
 
@@ -29,7 +32,10 @@ import { SortModule } from '../shared/pipes/sort/sort.module';
     MatDialogModule,
     DialogModule,
     MatMenuModule,
-    SortModule
+    SortModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    SearchModule
   ]
 })
 export class TodoListModule { }
