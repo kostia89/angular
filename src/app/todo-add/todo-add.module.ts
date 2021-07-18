@@ -5,14 +5,9 @@ import { TodoAddRoutingModule } from './todo-add-routing.module';
 import { TodoAddComponent } from './todo-add.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModule } from '../shared/components/dialog/dialog.module';
+import { TodoFormModule } from '../shared/components/todo-form/todo-form.module';
 
 
 
@@ -27,14 +22,9 @@ import { DialogModule } from '../shared/components/dialog/dialog.module';
     TodoAddRoutingModule,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatCheckboxModule,
     MatDialogModule,
-    DialogModule
+    DialogModule,
+    TodoFormModule
   ]
 })
 export class TodoAddModule { }

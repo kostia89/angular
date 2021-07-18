@@ -24,4 +24,7 @@ export class DataService {
   getTodo(id: string):Observable <SaveTodo> {
     return this.http.get<SaveTodo>(`${this.urlApi}/${id}`)
   }
+  upDateTodo(todo: Todo, id: string){
+    return this.http.put<SaveTodo>(`${this.urlApi}/${id}`, todo)
+  }
 }
