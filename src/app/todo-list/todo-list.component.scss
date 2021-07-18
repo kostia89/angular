@@ -38,7 +38,6 @@ a {
         display: grid;
         grid-auto-columns: auto max-content;
         grid-template-areas: "header action" "content action";
-        background-color: rgba(10, 83, 131, 0.24);
     }
     .mat-card-header{
         grid-area: header;

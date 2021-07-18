@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModule } from '../shared/components/dialog/dialog.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { SortModule } from '../shared/pipes/sort/sort.module';
 
 
 
@@ -27,7 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatDialogModule,
     DialogModule,
-    MatMenuModule
+    MatMenuModule,
+    SortModule
   ]
 })
 export class TodoListModule { }

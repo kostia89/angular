@@ -15,8 +15,29 @@ import { Observable, of } from 'rxjs';
 export class TodoListComponent implements OnInit {
 
   todos: SaveTodo[] = [];
-  defaultView = 'grid'
-
+  defaultView = 'grid';
+  paramSortDefault = {
+    property: 'status',
+    direction: 'ASC'
+  };
+  paramSort = [{
+    property: 'status',
+    direction: 'ASC',
+    name: 'first not complate'
+  },{
+    property: 'status',
+    direction: 'DESC',
+    name: 'first complate'
+  }]
+  paramSortDate =[{
+    property: 'dateComplete',
+    direction: 'ASC',
+    name: 'earlier'
+  },{
+    property: 'dateComplete',
+    direction: 'DESC',
+    name: 'later'
+  }]
   constructor(
     private data: DataService,
     private dialog: MatDialog,
@@ -56,16 +77,13 @@ export class TodoListComponent implements OnInit {
     ).subscribe((res)=>{
       this.todos.splice(index, 1);
     })
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   if (result){
-    //     this.data.deleteTodo(id).subscribe((res)=>{
-    //       console.log(res)
-    //       this.todos.splice(index, 1)
-    //     });
-      
-      
-    //   }
-    // });
-  
+    
+  }
+
+  changeSort(property: string, direction: string){
+    this.paramSortDefault = {property, direction}
+  }
+  changeSortDate(property: string, direction: string){
+    this.paramSortDefault = {property, direction}
   }
 }
