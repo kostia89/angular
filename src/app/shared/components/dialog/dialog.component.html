@@ -1,2 +1,12 @@
 <p>{{data.text}}</p>
-<button mat-button mat-dialog-close>ok</button>
+
+
+<ng-container *ngIf="data.isDeleteDialog; else simpleButton">
+    <div class="wrap-btn">
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="warn" (click)="agreeDelete()">Delate</button>
+    </div>
+</ng-container>
+<ng-template #simpleButton>
+    <button mat-button mat-dialog-close>ok</button>
+</ng-template>

@@ -28,13 +28,17 @@ a {
     text-decoration: none;
     color: white;
 }
-
+.wrap-menu{
+    display: flex;
+    justify-content: space-between
+}
 .list-todo{
     .mat-card{
         margin-bottom: 15px;
         display: grid;
         grid-auto-columns: auto max-content;
         grid-template-areas: "header action" "content action";
+        background-color: rgba(10, 83, 131, 0.24);
     }
     .mat-card-header{
         grid-area: header;

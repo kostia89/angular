@@ -27,4 +27,7 @@ export class DataService {
   upDateTodo(todo: Todo, id: string){
     return this.http.put<SaveTodo>(`${this.urlApi}/${id}`, todo)
   }
+  deleteTodo(id: number):Observable <SaveTodo>{
+    return this.http.delete<SaveTodo>(`${this.urlApi}/${id}`)
+  }
 }
