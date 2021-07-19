@@ -6,7 +6,7 @@ import { DataService } from '../shared/services/data.service';
 import { filter, switchMap } from 'rxjs/operators'
 import { Observable, of } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { mergeMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-todo-list',
@@ -75,6 +75,7 @@ export class TodoListComponent implements OnInit {
   }
   deleteList(id: number, index: number){
     console.log(id);
+    
     const dialogRef = this.dialog.open(DialogComponent, {
       data: {
         text: 'Are uor want delete the todo?',
@@ -83,10 +84,14 @@ export class TodoListComponent implements OnInit {
     });
     dialogRef.afterClosed().pipe(
       filter((resault)=> resault),
-      switchMap((resault: Observable <SaveTodo | null>)=> {
+      mergeMap((resault: Observable <SaveTodo[]>)=> {
         if (resault) {
+          
+          
           return this.data.deleteTodo(id)
-        } else {
+          
+          
+        } else  {
           return of(null)
         }
       })  

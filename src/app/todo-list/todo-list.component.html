@@ -44,8 +44,8 @@
 </div>
 <div class="{{defaultView}}-todo">
   <ng-container *ngIf="todos.length > 0; else noData">
-    <mat-card class="example-card" *ngFor="let todo of todos | sort : paramSortDefault | search : textSearch
-      ; let i = index" [ngClass]="{'done': todo.status, 'low': todo.priority === 1, 'middle': todo.priority === 2, 'high': todo.priority === 3}">
+    <ng-container *ngIf="(todos | search : textSearch) as result">
+    <mat-card class="example-card" *ngFor="let i = index; let todo of result | sort : paramSortDefault " [ngClass]="{'done': todo.status, 'low': todo.priority === 1, 'middle': todo.priority === 2, 'high': todo.priority === 3}">
       <mat-card-header>
         <mat-card-title><a [routerLink]="['/todo', todo.id]">{{todo.name}}</a></mat-card-title>
         <mat-card-subtitle>{{todo.dateComplete | date}}</mat-card-subtitle>
@@ -58,10 +58,14 @@
           <button mat-raised-button color="primary" [routerLink]="['/todo/edit', todo.id]">Edit</button>
       </mat-card-actions>
     </mat-card>
+    <p *ngIf="result.length === 0">NO MATCH</p>
+    </ng-container>
+    
   </ng-container>
   <ng-template #noData>
     <h2>No todo</h2>
   </ng-template>
+  
 </div>
 
 
