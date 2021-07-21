@@ -50,3 +50,11 @@ a {
         grid-area: action;
     }
 }
+.mat-menu-item-submenu-trigger::after {
+    
+    top: 40%;
+    left: 5px;
+    transform: rotate(
+        180deg
+        );
+}
