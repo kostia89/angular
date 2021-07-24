@@ -1,5 +1,10 @@
 @import '../../assets/scss/mixsins';
 .grid-todo{
+    @media(max-width: 768px){
+        display: grid;
+        gap:15px;
+        grid-template-columns: 1fr;
+    }
     @media (min-width: 768px){
         display: grid;
         gap:15px;
@@ -29,9 +34,15 @@ a {
     color: white;
 }
 .wrap-menu{
+    @media(min-width: 481px){
     display: flex;
     justify-content: space-between;
     align-items: center;
+    }
+    @media (max-width:481px) {
+        align-items: flex-start;
+    flex-direction: column;
+    }
 }
 .list-todo{
     .mat-card{
@@ -54,7 +65,5 @@ a {
     
     top: 40%;
     left: 5px;
-    transform: rotate(
-        180deg
-        );
+    transform: rotate(180deg);
 }
